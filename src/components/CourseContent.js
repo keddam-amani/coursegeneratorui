@@ -151,9 +151,7 @@ function Topic({ topic, index, moveTopic, moveSubtopic }) {
 function CourseContent() {
   const location = useLocation();
   const { course } = location.state || {};
-
-
-
+  const [loading, setLoading] = useState(false);
   const [selectedLesson, setSelectedLesson] = useState(course ? course[0] : null);
   const navigate = useNavigate();
 
@@ -189,8 +187,9 @@ function CourseContent() {
 
     setSelectedLesson({ ...selectedLesson, topics: updatedTopics });
   };
-
   const handleGenerateContent = async () => {
+    setLoading(true);
+
     const coursePlan = course.map((lesson) => ({
       id: lesson.id,
       lesson_title: lesson.lesson_title,
@@ -211,6 +210,8 @@ function CourseContent() {
       navigate('/lesson-content', { state: { lessons: response.data } });
     } catch (error) {
       console.error('Error generating content:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -241,8 +242,9 @@ function CourseContent() {
           <button
             className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
             onClick={handleGenerateContent}
+            disabled={loading} // Disable the button while loading
           >
-            Generate Content
+            {loading ? 'Generating...' : 'Generate Content'} {/* Show loading text */}
           </button>
         </div>
       </aside>
