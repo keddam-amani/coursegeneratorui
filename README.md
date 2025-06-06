@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+> *This repository contains the UI code for the project.*
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#  An end to End AI Course Generation System
 
-## Available Scripts
+This project presents an AI-powered system designed to automate the generation of higher education academic courses using OpenAI's language models. It integrates advanced prompt engineering techniques, natural language processing (NLP), and automated fact verification to simplify, accelerate, and enhance the course development process for educators.
 
-In the project directory, you can run:
+**Read the full Master’s Thesis:**  
+[*Designing an End-to-End AI Course Generation System (PDF)*](https://drive.google.com/file/d/1ux6LOoFCKjYs1oqOs-W4lIZ5BBG2fd_-/view?usp=sharing)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+##  Objectives
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Develop an academic course generation pipeline tailored for higher education.
+- Leverage prompt engineering to maximize the effectiveness of the ChatGPT model.
+- Reduce the manual workload and time investment required for course design.
+- Ensure academic accuracy and integrity through automated fact-checking.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##  System Overview
 
-### `npm run build`
+This system guides educators through a comprehensive pipeline:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Course Outline Generation** – Automatically generates structured outlines for academic courses.
+2. **Content Development** – Creates and refines lecture content (shorten, expand, paraphrase).
+3. **Fact Verification** – Validates claims using:
+   - Named Entity Recognition (NER)
+   - Wikipedia API for source retrieval
+   - SentenceTransformers for semantic similarity analysis
+   - A classification system: `Verified`, `Moderate`, or `Unverified`
+     
+<img width="402" alt="Screenshot 2025-05-24 at 00 20 17" src="https://github.com/user-attachments/assets/dfc59a43-cb45-4869-a41e-3798cbdbd867" />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##  Prompt Engineering Framework
 
-### `npm run eject`
+To optimize AI interactions, the system incorporates a custom prompt framework:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Structure:**
+- **Role**
+- **Task**
+- **Instructions**
+- **Examples**
+- **Output Format**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prompting Techniques Used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Prompt Patterns:** Persona Pattern, Fact Check List Pattern
+- **Prompting Techniques:** 
+  - Generated Knowledge Prompting
+  - Recursive Criticism and Improvement (RCI)
+  - Few-Shot Prompting
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+##  Evaluation Metrics
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The system’s output was evaluated using a set of NLP and LLM-informed metrics, for instance:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Contextual Relevance** – Evaluates how well content fits within the course scope.
+- **Word Count Analysis** – Measures consistency and conciseness across content blocks.
+- **Factual Accuracy** – Using the verification system to label information quality.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+##  Skills & Technologies Used
 
-### Analyzing the Bundle Size
+- OpenAI GPT-4 API
+- Prompt Engineering
+- Named Entity Recognition (NER)
+- Wikipedia API
+- SentenceTransformers (Semantic Similarity)
+- Natural Language Processing (NLP)
+- Python
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+##  Conclusion
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This project demonstrates the potential of generative AI in education by streamlining the course creation process. While challenges remain, such as maintaining academic integrity and ensuring content relevance, the system provides a scalable starting point for AI-assisted curriculum design.
 
-### Advanced Configuration
+---
+##  License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the [MIT License](LICENSE).
